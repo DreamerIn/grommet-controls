@@ -63,12 +63,6 @@ export default class ReactTablePagination extends Component<
     this.state = { page: props.page };
   }
 
-  static getDerivedStateFromProps(nextProps) {
-    return {
-      page: nextProps.page,
-    };
-  }
-
   getSafePage = page => {
     const pg = Number.isNaN(page) ? this.props.page : page;
     return Math.min(Math.max(pg, 0), this.props.pages - 1);
